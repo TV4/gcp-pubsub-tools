@@ -1,0 +1,15 @@
+language: go
+
+go:
+  - 1.9
+
+sudo: false
+
+install:
+  - go get github.com/golang/lint/golint
+
+script:
+  - golint -set_exit_status cmd/gcp-pubsub-publish
+  - golint -set_exit_status cmd/gcp-pubsub-subscribe
+  - go vet ./...
+  - go test ./...
