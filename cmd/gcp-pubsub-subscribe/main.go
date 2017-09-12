@@ -26,6 +26,7 @@ GCP credentials file:
 
 	credentialsFile := flag.String("credentials", "", "path to a GCP credentials file")
 	projectID := flag.String("project", "", "Pub/Sub project ID")
+	quiet := flag.Bool("quiet", false, "do not print messages (side-effect: more speed)")
 	subscriptionName := flag.String("subscription", "", "Pub/Sub subscription name")
 
 	flag.Parse()
@@ -61,10 +62,12 @@ GCP credentials file:
 
 	var mu sync.Mutex
 	err = subscription.Receive(ctx, func(ctx context.Context, msg *gcppubsub.Message) {
-		mu.Lock()
-		os.Stdout.Write(msg.Data)
-		fmt.Println()
-		mu.Unlock()
+		if !*quiet {
+			mu.Lock()
+			os.Stdout.Write(msg.Data)
+			fmt.Println()
+			mu.Unlock()
+		}
 		msg.Ack()
 	})
 

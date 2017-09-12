@@ -17,11 +17,13 @@ go get -u github.com/TV4/pubsub-tools/cmd/gcp-pubsub-subscribe
 gcp-pubsub-subscribe -credentials=<...> -project=<...> -subscription=<...>
 
   -credentials string
-        path to a GCP credentials file
+    	path to a GCP credentials file
   -project string
-        Pub/Sub project ID
+    	Pub/Sub project ID
+  -quiet
+    	do not print messages (side-effect: more speed)
   -subscription string
-        Pub/Sub subscription name
+    	Pub/Sub subscription name
 
 GCP credentials file:
   https://developers.google.com/identity/protocols/application-default-credentials
