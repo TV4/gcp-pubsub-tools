@@ -15,7 +15,7 @@ import (
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintln(os.Stderr, `Usage:
-  gcp-pubsub-subscribe -credentials=<...> -project=<...> -subscription=<...>
+  gcp-pubsub-subscribe [-credentials=<...>] -project=<...> -subscription=<...>
 `)
 		flag.PrintDefaults()
 		fmt.Fprintln(os.Stderr, `
@@ -33,10 +33,6 @@ GCP credentials file:
 
 	var missing []string
 
-	if *credentialsFile == "" {
-		missing = append(missing, "credentials")
-	}
-
 	if *projectID == "" {
 		missing = append(missing, "project")
 	}
@@ -53,7 +49,11 @@ GCP credentials file:
 
 	ctx := context.Background()
 
-	gcpClient, err := gcppubsub.NewClient(ctx, *projectID, gcpoption.WithCredentialsFile(*credentialsFile))
+	var opts []gcpoption.ClientOption
+	if *credentialsFile != "" {
+		opts = append(opts, gcpoption.WithCredentialsFile(*credentialsFile))
+	}
+	gcpClient, err := gcppubsub.NewClient(ctx, *projectID, opts...)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
