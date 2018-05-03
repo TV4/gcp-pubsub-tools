@@ -15,13 +15,13 @@ import (
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintln(os.Stderr, `Usage:
-  gcp-pubsub-subscribe [-credentials=<...>] -project=<...> -subscription=<...>
-`)
+  gcp-pubsub-subscribe [-credentials=<...>] -project=<...> -subscription=<...>`)
+		fmt.Fprintln(os.Stderr)
 		flag.PrintDefaults()
 		fmt.Fprintln(os.Stderr, `
 GCP credentials file:
-  https://developers.google.com/identity/protocols/application-default-credentials
-`)
+  https://developers.google.com/identity/protocols/application-default-credentials`)
+		fmt.Fprintln(os.Stderr)
 	}
 
 	credentialsFile := flag.String("credentials", "", "path to a GCP credentials file")
