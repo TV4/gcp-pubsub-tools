@@ -6,7 +6,7 @@ go:
 sudo: false
 
 install:
-  - go get github.com/golang/lint/golint
+  - go get -u golang.org/x/lint/golint
 
 script:
   - golint -set_exit_status cmd/gcp-pubsub-publish
