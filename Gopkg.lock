@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:dc60d417f547aadb56c9d7c0c0c9cbea92f2c6e2975fcf3fa8c3ea3336946d8e"
+  digest = "1:1e6496d4bbedbd07f8608457d751a432d99f8ce2607d039d783b231744b89c37"
   name = "cloud.google.com/go"
   packages = [
     "compute/metadata",
@@ -11,14 +11,22 @@
     "internal/version",
     "pubsub",
     "pubsub/apiv1",
+    "pubsub/internal/distribution",
   ]
   pruneopts = "NUT"
-  revision = "767c40d6a2e058483c25fa193e963a22da17236d"
-  version = "v0.18.0"
+  revision = "64a2037ec6be8a4b0c1d1f706ed35b428b989239"
+  version = "v0.26.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:3e36e8484c10d3110e4bc846e255d360b3f4721fcaaf1877db2992640e1ab924"
+  digest = "1:dc27d9777febe9e63ab33a2cd15e31ce8d9463932d2472cc7097dc662dedb5ab"
+  name = "contrib.go.opencensus.io/exporter/stackdriver"
+  packages = ["propagation"]
+  pruneopts = "NUT"
+  revision = "2b93072101d466aa4120b3c23c2e1b08af01541c"
+  version = "v0.6.0"
+
+[[projects]]
+  digest = "1:2ad803563aaf977423818ad6bc3d8b3b898acde79131f1cb3541fdd4167b69f5"
   name = "github.com/golang/protobuf"
   packages = [
     "proto",
@@ -30,7 +38,8 @@
     "ptypes/timestamp",
   ]
   pruneopts = "NUT"
-  revision = "c65a0412e71e8b9b3bfd22925720d23c0f054237"
+  revision = "aa810b61a9c79d51363740d207bb46cf8e620ed5"
+  version = "v1.2.0"
 
 [[projects]]
   digest = "1:fe852c57b4fc4d11e6ef79bce1e930ee2f2f7d148b370afef8f8d012a80960ea"
@@ -41,25 +50,47 @@
   version = "v2.0.0"
 
 [[projects]]
+  digest = "1:d5873df99f8cd0510440f202f92578caee8404fd835eb17d7cd3534cd1b6c982"
+  name = "go.opencensus.io"
+  packages = [
+    ".",
+    "internal",
+    "internal/tagencoding",
+    "plugin/ocgrpc",
+    "plugin/ochttp",
+    "plugin/ochttp/propagation/b3",
+    "stats",
+    "stats/internal",
+    "stats/view",
+    "tag",
+    "trace",
+    "trace/internal",
+    "trace/propagation",
+  ]
+  pruneopts = "NUT"
+  revision = "7b558058b7cc960667590e5413ef55157b06652e"
+  version = "v0.15.0"
+
+[[projects]]
   branch = "master"
-  digest = "1:1f3414e772b82491b4d7faa7308f49ccac0681522a24e2dfc0476f81bd7c672b"
+  digest = "1:274c2fa94d93c89fb107c18f715732390bcc4cf337d8d82cdeee5d92d162ff14"
   name = "golang.org/x/net"
   packages = [
     "context",
     "context/ctxhttp",
+    "http/httpguts",
     "http2",
     "http2/hpack",
     "idna",
     "internal/timeseries",
-    "lex/httplex",
     "trace",
   ]
   pruneopts = "NUT"
-  revision = "0ed95abb35c445290478a5348a7b38bb154135fd"
+  revision = "4bcd98cce591d8c7061bf313d7a3cbad05b58549"
 
 [[projects]]
   branch = "master"
-  digest = "1:f660ea0d7ea536f94796880f605b22d4f8c288e96b76f27d11971d78fbd6c6e6"
+  digest = "1:bc2b221d465bb28ce46e8d472ecdc424b9a9b541bd61d8c311c5f29c8dd75b1b"
   name = "golang.org/x/oauth2"
   packages = [
     ".",
@@ -69,7 +100,7 @@
     "jwt",
   ]
   pruneopts = "NUT"
-  revision = "b28fcf2b08a19742b43084fb40ab78ac6c3d8067"
+  revision = "d2e6202438beef2727060aa7cabdd924d92ebfd9"
 
 [[projects]]
   branch = "master"
@@ -80,10 +111,17 @@
     "semaphore",
   ]
   pruneopts = "NUT"
-  revision = "fd80eb99c8f653c847d294a001bdf2a3a6f768f5"
+  revision = "1d60e4601c6fd243af51cc01ddf169918a5407ca"
 
 [[projects]]
   branch = "master"
+  digest = "1:d6778df809be25a63e2a54377d06d1d80e33a0fa8639d7c5532a72def7d00b5b"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  pruneopts = "NUT"
+  revision = "4910a1d54f876d7b22162a85f4d066d3ee649450"
+
+[[projects]]
   digest = "1:e7071ed636b5422cc51c0e3a6cebc229d6c9fffc528814b519a980641422d619"
   name = "golang.org/x/text"
   packages = [
@@ -103,11 +141,12 @@
     "unicode/rangetable",
   ]
   pruneopts = "NUT"
-  revision = "e19ae1496984b1c655b8044a65c0300a3c878dd3"
+  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
+  version = "v0.3.0"
 
 [[projects]]
   branch = "master"
-  digest = "1:d861a1e22d4df5be391b3e7a7252f5f055cfc4789631c53db0715edf1b80578e"
+  digest = "1:e38e67f6b75387e83ca338edb7be9a8a2bbc8fe87e4424b5b9b6b0646691e119"
   name = "google.golang.org/api"
   packages = [
     "googleapi/transport",
@@ -120,10 +159,10 @@
     "transport/http",
   ]
   pruneopts = "NUT"
-  revision = "adc96e7cd85a1474b9ffb0c47dbc327d0e7ce5fb"
+  revision = "943e5aafc110feadee8cf71cde31afa0d1bab9f8"
 
 [[projects]]
-  digest = "1:626ac4e70ef18262989f8c52503259109e1a2e5580d23aeae0f0e0349819dade"
+  digest = "1:8a3a8e562c362acf2762a091627554f12d49c242dfe905cf7231c66cb5c66b6e"
   name = "google.golang.org/appengine"
   packages = [
     ".",
@@ -140,12 +179,12 @@
     "urlfetch",
   ]
   pruneopts = "NUT"
-  revision = "150dc57a1b433e64154302bdc40b6bb8aefa313a"
-  version = "v1.0.0"
+  revision = "b1f26356af11148e710935ed1ac8a7f5702c7612"
+  version = "v1.1.0"
 
 [[projects]]
   branch = "master"
-  digest = "1:eb6722eada5e014072520752d50cbee4851a7089bdeee586ca1e44af97b08370"
+  digest = "1:c5af7a36fb725ca2f1b25c7870ee265f8f43ad29e088cc72e3078e3ca6b170e1"
   name = "google.golang.org/genproto"
   packages = [
     "googleapis/api/annotations",
@@ -155,10 +194,10 @@
     "protobuf/field_mask",
   ]
   pruneopts = "NUT"
-  revision = "14790a1795ea4c3387aaf24aed670ddb51f18292"
+  revision = "c66870c02cf823ceb633bcd05be3c7cda29976f4"
 
 [[projects]]
-  digest = "1:01612eee1aa595116e37e95a60eeefe77c5e94109b3b128599d7c405e71cbd38"
+  digest = "1:a6b0b7f7e3b3d0d3bd090b120948c4519b6407828078935868d3207b12958a00"
   name = "google.golang.org/grpc"
   packages = [
     ".",
@@ -170,9 +209,14 @@
     "credentials",
     "credentials/oauth",
     "encoding",
-    "grpclb/grpc_lb_v1/messages",
+    "encoding/proto",
     "grpclog",
     "internal",
+    "internal/backoff",
+    "internal/channelz",
+    "internal/envconfig",
+    "internal/grpcrand",
+    "internal/transport",
     "keepalive",
     "metadata",
     "naming",
@@ -183,11 +227,10 @@
     "stats",
     "status",
     "tap",
-    "transport",
   ]
   pruneopts = "NUT"
-  revision = "6b51017f791ae1cfbec89c52efdf444b13b550ef"
-  version = "v1.9.2"
+  revision = "32fb0ac620c32ba40a4626ddf94d90d12cce3455"
+  version = "v1.14.0"
 
 [solve-meta]
   analyzer-name = "dep"
