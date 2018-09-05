@@ -14,8 +14,8 @@
     "pubsub/internal/distribution",
   ]
   pruneopts = "NUT"
-  revision = "64a2037ec6be8a4b0c1d1f706ed35b428b989239"
-  version = "v0.26.0"
+  revision = "c728a003b238b26cef9ab6753a5dc424b331c3ad"
+  version = "v0.27.0"
 
 [[projects]]
   digest = "1:dc27d9777febe9e63ab33a2cd15e31ce8d9463932d2472cc7097dc662dedb5ab"
@@ -86,7 +86,7 @@
     "trace",
   ]
   pruneopts = "NUT"
-  revision = "4bcd98cce591d8c7061bf313d7a3cbad05b58549"
+  revision = "8a410e7b638dca158bf9e766925842f6651ff828"
 
 [[projects]]
   branch = "master"
@@ -115,11 +115,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:d6778df809be25a63e2a54377d06d1d80e33a0fa8639d7c5532a72def7d00b5b"
+  digest = "1:e6dbca9f2140ddba98798380b4e9f75cbf2e9d26c382b962abee857b05c3392a"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "NUT"
-  revision = "4910a1d54f876d7b22162a85f4d066d3ee649450"
+  revision = "ebe1bf3edb3325c393447059974de898d5133eb8"
 
 [[projects]]
   digest = "1:e7071ed636b5422cc51c0e3a6cebc229d6c9fffc528814b519a980641422d619"
@@ -159,7 +159,7 @@
     "transport/http",
   ]
   pruneopts = "NUT"
-  revision = "943e5aafc110feadee8cf71cde31afa0d1bab9f8"
+  revision = "0ad5a633fea1d4b64bf5e6a01e30d1fc466038e5"
 
 [[projects]]
   digest = "1:8a3a8e562c362acf2762a091627554f12d49c242dfe905cf7231c66cb5c66b6e"
@@ -194,7 +194,7 @@
     "protobuf/field_mask",
   ]
   pruneopts = "NUT"
-  revision = "c66870c02cf823ceb633bcd05be3c7cda29976f4"
+  revision = "11092d34479b07829b72e10713b159248caf5dad"
 
 [[projects]]
   digest = "1:a6b0b7f7e3b3d0d3bd090b120948c4519b6407828078935868d3207b12958a00"
