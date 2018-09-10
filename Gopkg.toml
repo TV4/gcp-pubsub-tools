@@ -23,3 +23,7 @@
   non-go = true
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "cloud.google.com/go"
+  version = "v0.23.0"
