@@ -12,7 +12,7 @@ This is a small set of command-line tools for interacting with
 * [cmd/gcp-pubsub-subscribe](cmd/gcp-pubsub-subscribe) subscribes to a Pub/Sub subscription
 
 ## License
-Copyright (c) 2017 Bonnier Broadcasting / TV4
+Copyright (c) 2017-2018 Bonnier Broadcasting / TV4
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
