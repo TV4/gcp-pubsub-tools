@@ -7,6 +7,5 @@ install:
   - go get -u golang.org/x/lint/golint
 
 script:
-  - golint -set_exit_status cmd/gcp-pubsub-publish
-  - golint -set_exit_status cmd/gcp-pubsub-subscribe
+  - go list ./... | xargs -n1 golint -set_exit_status
   - go test ./...
