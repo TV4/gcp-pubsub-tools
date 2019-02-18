@@ -1,15 +1,16 @@
 # gcp-pubsub-subscribe
 
-[![Build Status](https://travis-ci.org/TV4/gcp-pubsub-tools.svg?branch=master)](https://travis-ci.org/TV4/gcp-pubsub-tools)
-[![Go Report Card](https://goreportcard.com/badge/github.com/TV4/gcp-pubsub-tools)](https://goreportcard.com/report/github.com/TV4/gcp-pubsub-tools)
-[![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/TV4/gcp-pubsub-tools#license)
+[![Build Status](https://travis-ci.org/TV4/gcp-tools.svg?branch=master)](https://travis-ci.org/TV4/gcp-tools)
+[![Go Report Card](https://goreportcard.com/badge/github.com/TV4/gcp-tools)](https://goreportcard.com/report/github.com/TV4/gcp-tools)
+[![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/TV4/gcp-tools#license)
 
-`gcp-pubsub-subscribe` reads from the specified Pub/Sub subscription and writes each
+`gcp-pubsub-subscribe` reads from the specified
+[GCP Pub/Sub](https://cloud.google.com/pubsub/) subscription and writes each
 message followed by a newline to `stdout`.
 
 ## Installation
 ```
-go get -u github.com/TV4/gcp-pubsub-tools/cmd/gcp-pubsub-subscribe
+go get -u github.com/TV4/gcp-tools/cmd/gcp-pubsub-subscribe
 ```
 
 ## Usage

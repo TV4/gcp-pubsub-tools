@@ -1,11 +1,10 @@
-# GCP Pub/Sub tools
+# GCP tools
 
-[![Build Status](https://travis-ci.org/TV4/gcp-pubsub-tools.svg?branch=master)](https://travis-ci.org/TV4/gcp-pubsub-tools)
-[![Go Report Card](https://goreportcard.com/badge/github.com/TV4/gcp-pubsub-tools)](https://goreportcard.com/report/github.com/TV4/gcp-pubsub-tools)
-[![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/TV4/gcp-pubsub-tools#license)
+[![Build Status](https://travis-ci.org/TV4/gcp-tools.svg?branch=master)](https://travis-ci.org/TV4/gcp-tools)
+[![Go Report Card](https://goreportcard.com/badge/github.com/TV4/gcp-tools)](https://goreportcard.com/report/github.com/TV4/gcp-tools)
+[![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/TV4/gcp-tools#license)
 
-This is a small set of command-line tools for interacting with
-[GCP Pub/Sub](https://cloud.google.com/pubsub/).
+This is a small set of command-line tools for interacting with GCP.
 
 ## Index
 * [cmd/gcp-pubsub-publish](cmd/gcp-pubsub-publish) publishes messages on a Pub/Sub topic
