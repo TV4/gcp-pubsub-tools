@@ -4,7 +4,8 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/TV4/gcp-tools)](https://goreportcard.com/report/github.com/TV4/gcp-tools)
 [![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/TV4/gcp-tools#license)
 
-This is a small set of command-line tools for interacting with GCP.
+This is a small set of command-line tools for interacting with
+[Google Cloud Platform](https://cloud.google.com/).
 
 ## Index
 * [cmd/gcp-pubsub-publish](cmd/gcp-pubsub-publish) publishes messages on a Pub/Sub topic
