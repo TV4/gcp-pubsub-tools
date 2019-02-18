@@ -9,7 +9,7 @@ specified Pub/Sub topic.
 
 ## Installation
 ```
-go get -u github.com/TV4/pubsub-tools/cmd/gcp-pubsub-publish
+go get -u github.com/TV4/gcp-pubsub-tools/cmd/gcp-pubsub-publish
 ```
 
 ## Usage
