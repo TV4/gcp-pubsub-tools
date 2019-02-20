@@ -14,10 +14,12 @@ go get -u github.com/TV4/gcp-tools/cmd/gcp-pubsub-publish
 
 ## Usage
 ```
-gcp-pubsub-publish -credentials=<...> -project=<...> -topic=<...>
+gcp-pubsub-publish [-credentialsfile=<...>|-credentialsjson=<...>] -project=<...> -topic=<...>
 
-  -credentials string
+  -credentialsfile string
         path to a GCP credentials file
+  -credentialsjson string
+        json string of a GCP credentials file content
   -project string
         Pub/Sub project ID
   -topic string

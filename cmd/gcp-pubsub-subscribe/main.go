@@ -15,7 +15,7 @@ import (
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintln(os.Stderr, `Usage:
-  gcp-pubsub-subscribe [-credentials=<...>] -project=<...> -subscription=<...>`)
+  gcp-pubsub-subscribe [-credentialsfile=<...>|-credentialsjson=<...>] -project=<...> -subscription=<...>`)
 		fmt.Fprintln(os.Stderr)
 		flag.PrintDefaults()
 		fmt.Fprintln(os.Stderr, `
@@ -24,7 +24,8 @@ GCP credentials file:
 		fmt.Fprintln(os.Stderr)
 	}
 
-	credentialsFile := flag.String("credentials", "", "path to a GCP credentials file")
+	credentialsFile := flag.String("credentialsfile", "", "path to a GCP credentials file")
+	credentialsJSON := flag.String("credentialsjson", "", "json string of a GCP credentials file content")
 	projectID := flag.String("project", "", "Pub/Sub project ID")
 	quiet := flag.Bool("quiet", false, "do not print messages (side-effect: more speed)")
 	subscriptionName := flag.String("subscription", "", "Pub/Sub subscription name")
@@ -47,11 +48,19 @@ GCP credentials file:
 		os.Exit(1)
 	}
 
+	if *credentialsFile != "" && *credentialsJSON != "" {
+		fmt.Fprint(os.Stderr, "conflict: use either credentialsfile or credentialsjson")
+		os.Exit(1)
+	}
+
 	ctx := context.Background()
 
 	var opts []gcpoption.ClientOption
 	if *credentialsFile != "" {
 		opts = append(opts, gcpoption.WithCredentialsFile(*credentialsFile))
+	}
+	if *credentialsJSON != "" {
+		opts = append(opts, gcpoption.WithCredentialsJSON([]byte(*credentialsJSON)))
 	}
 	gcpClient, err := gcppubsub.NewClient(ctx, *projectID, opts...)
 	if err != nil {

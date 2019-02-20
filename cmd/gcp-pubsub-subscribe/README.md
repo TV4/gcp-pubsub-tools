@@ -15,10 +15,12 @@ go get -u github.com/TV4/gcp-tools/cmd/gcp-pubsub-subscribe
 
 ## Usage
 ```
-gcp-pubsub-subscribe -credentials=<...> -project=<...> -subscription=<...>
+gcp-pubsub-subscribe [-credentialsfile=<...>|-credentialsjson=<...>] -project=<...> -subscription=<...>
 
-  -credentials string
-    	path to a GCP credentials file
+  -credentialsfile string
+        path to a GCP credentials file
+  -credentialsjson string
+        json string of a GCP credentials file content
   -project string
     	Pub/Sub project ID
   -quiet
