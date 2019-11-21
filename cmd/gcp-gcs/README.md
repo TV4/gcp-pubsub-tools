@@ -1,19 +1,43 @@
-# GCP tools
+# gcp-gcs
 
 [![Build Status](https://travis-ci.com/TV4/gcp-tools.svg?branch=master)](https://travis-ci.com/TV4/gcp-tools)
 [![Go Report Card](https://goreportcard.com/badge/github.com/TV4/gcp-tools)](https://goreportcard.com/report/github.com/TV4/gcp-tools)
 [![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/TV4/gcp-tools#license)
 
-This is a small set of command-line tools for interacting with
-[Google Cloud Platform](https://cloud.google.com/).
+`gcp-gcp` reads and writes from/to
+[Google Cloud Storage](https://cloud.google.com/storage/).
 
-## Index
-* [cmd/gcp-gcs](cmd/gcp-gcs) reads and writes from/to Google Cloud Storage
-* [cmd/gcp-pubsub-publish](cmd/gcp-pubsub-publish) publishes messages on a Pub/Sub topic
-* [cmd/gcp-pubsub-subscribe](cmd/gcp-pubsub-subscribe) subscribes to a Pub/Sub subscription
+## Installation
+```
+go get -u github.com/TV4/gcp-tools/cmd/gcp-gcs
+```
+
+## Usage
+```
+gcp-gcs [-credentialsfile=<...>|-credentialsjson=<...>] -bucket=<...> <command>
+
+  -bucket string
+        bucket name
+  -credentialsfile string
+        path to a GCP credentials file
+  -credentialsjson string
+        json string of a GCP credentials file content
+
+  Commands:
+    ls       [<prefix>]              Lists bucket objects, optionally filtered by the given prefix
+    download <object> [<object>...]  Downloads given object(s) from the bucket
+    upload   <file> [<file>...]      Uploads given file(s) to the bucket
+    read     <object>                Reads a bucket object to stdout
+    write    <object>                Writes a bucket object from stdin
+    rm       <object> [<object>...]  Deletes the given object(s) from the bucket
+
+
+GCP credentials file:
+  https://developers.google.com/identity/protocols/application-default-credentials
+```
 
 ## License
-Copyright (c) 2017-2019 TV4
+Copyright (c) 2019 TV4
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

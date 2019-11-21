@@ -2,17 +2,20 @@
 
 
 [[projects]]
-  digest = "1:62051b533295a637c046efa9f49faaec0c7335cb553d4b022f84d915b2b786ad"
+  digest = "1:22f8ef839b41a87e5e2838e4cb341586b454534560cc85708f298f65dd5cbb0e"
   name = "cloud.google.com/go"
   packages = [
     ".",
     "compute/metadata",
     "iam",
+    "internal",
     "internal/optional",
+    "internal/trace",
     "internal/version",
     "pubsub",
     "pubsub/apiv1",
     "pubsub/internal/distribution",
+    "storage",
   ]
   pruneopts = "NUT"
   revision = "264def2dd949cdb8a803bb9f50fa29a67b798a6a"
@@ -225,13 +228,17 @@
   revision = "e7abfedfabcfcc6a3220ae994ab001754cf1a76a"
 
 [[projects]]
-  digest = "1:9b9245bd124d95af7072487cd1e5861174b859ebc31cbe9fbab3b88456701485"
+  digest = "1:b414dd15b7b0f038c5a28e9049b6d521097f169dac97de5e3187ac1cea711b04"
   name = "google.golang.org/api"
   packages = [
+    "gensupport",
+    "googleapi",
+    "googleapi/internal/uritemplates",
     "googleapi/transport",
     "internal",
     "iterator",
     "option",
+    "storage/v1",
     "support/bundler",
     "transport",
     "transport/grpc",
@@ -265,12 +272,13 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:cd53c155bb83d741692597f2c9c95ff0a8ee0221b6937332711e3a5cf42161fe"
+  digest = "1:99e56a99f19072bd1b56b5b7a3ac04323f7b376f100d2ff911b00c8560a5ca5c"
   name = "google.golang.org/genproto"
   packages = [
     "googleapis/api/annotations",
     "googleapis/iam/v1",
     "googleapis/pubsub/v1",
+    "googleapis/rpc/code",
     "googleapis/rpc/status",
     "googleapis/type/expr",
     "protobuf/field_mask",
@@ -370,6 +378,8 @@
   analyzer-version = 1
   input-imports = [
     "cloud.google.com/go/pubsub",
+    "cloud.google.com/go/storage",
+    "google.golang.org/api/iterator",
     "google.golang.org/api/option",
   ]
   solver-name = "gps-cdcl"
