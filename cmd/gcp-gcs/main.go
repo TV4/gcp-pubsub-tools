@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"path"
 	"strings"
 
 	gcpstorage "cloud.google.com/go/storage"
@@ -194,7 +195,7 @@ func cmdUpload(files []string, bucket *gcpstorage.BucketHandle) {
 			}
 			defer f.Close()
 
-			obj := bucket.Object(fileName)
+			obj := bucket.Object(path.Base(fileName))
 			w := obj.NewWriter(context.Background())
 			defer w.Close()
 
