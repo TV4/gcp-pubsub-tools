@@ -161,6 +161,10 @@ func cmdDownload(objects []string, bucket *gcpstorage.BucketHandle) {
 			}
 			defer r.Close()
 
+			if err := os.MkdirAll(path.Dir(objName), 0o755); err != nil {
+				return fmt.Errorf("error creating directory: %v", err)
+			}
+
 			f, err := os.Create(objName)
 			if err != nil {
 				return fmt.Errorf("error opening file for writing: %v", err)
