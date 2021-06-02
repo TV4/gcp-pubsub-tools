@@ -24,6 +24,7 @@ GCP credentials file:
 		fmt.Fprintln(os.Stderr)
 	}
 
+	ack := flag.Bool("ack", false, "ack messages")
 	credentialsFile := flag.String("credentialsfile", "", "path to a GCP credentials file")
 	credentialsJSON := flag.String("credentialsjson", "", "json string of a GCP credentials file content")
 	projectID := flag.String("project", "", "Pub/Sub project ID")
@@ -77,7 +78,9 @@ GCP credentials file:
 			fmt.Println()
 			mu.Unlock()
 		}
-		msg.Ack()
+		if *ack {
+			msg.Ack()
+		}
 	})
 
 	if err != nil {
