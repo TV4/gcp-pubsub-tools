@@ -10,7 +10,7 @@ message followed by a newline to `stdout`.
 
 ## Installation
 ```
-go get -u github.com/TV4/gcp-tools/cmd/gcp-pubsub-subscribe
+go install github.com/TV4/gcp-tools/cmd/gcp-pubsub-subscribe@latest
 ```
 
 ## Usage

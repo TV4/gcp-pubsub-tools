@@ -9,7 +9,7 @@ the specified [GCP Pub/Sub](https://cloud.google.com/pubsub/) topic.
 
 ## Installation
 ```
-go get -u github.com/TV4/gcp-tools/cmd/gcp-pubsub-publish
+go install github.com/TV4/gcp-tools/cmd/gcp-pubsub-publish@latest
 ```
 
 ## Usage

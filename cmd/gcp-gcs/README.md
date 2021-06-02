@@ -9,7 +9,7 @@
 
 ## Installation
 ```
-go get -u github.com/TV4/gcp-tools/cmd/gcp-gcs
+go install github.com/TV4/gcp-tools/cmd/gcp-gcs@latest
 ```
 
 ## Usage
